@@ -3,9 +3,7 @@ import './app.css';
 import SearchBar from '../searchBar/searchBar.js';
 import SearchResults from '../searchResults/searchResults.js';
 import Playlist from '../playlist/playlist.js';
-//import Track from '../track/track.js';
 
-// let playlistTracks;
 
 class App extends Component {
   constructor(props) {
@@ -60,9 +58,9 @@ class App extends Component {
   }
 
   removeTrack(track) {
-    let updateTracks = this.state.playlistTracks.filter(track);
+    let updateTracks = this.state.playlistTracks.filter(checkTrack =>
+      checkTrack !== track)
     this.setState({playlistTracks: updateTracks});
-
   }
 
 
@@ -81,7 +79,8 @@ class App extends Component {
             < Playlist
               playlistName={this.state.playlistName}
               playlistTracks={this.state.playlistTracks}
-            
+              onRemove={this.removeTrack}
+
             />
           </div>
         </div>

@@ -4,17 +4,15 @@ import Track from '../track/track.js';
 
 
 class TrackList extends React.Component {
-
   render() {
     return (
       <div className="TrackList">
       {
-       this.props.tracks && this.props.tracks.map((track, id) => {
-          console.log(track);
+        this.props.tracks.map((track, id) => {
           return <Track
           key = {id}
           track = {track}
-          onAdd={this.props.onAdd}  // add: isRemoval={this.props.isRemoval} ?
+          onAdd={this.props.onAdd}
           onRemove={this.props.onRemove}
          />
        })
@@ -23,12 +21,6 @@ class TrackList extends React.Component {
     );
   }
 }
-
-
-
-
-
-
 
 
 export default TrackList;
