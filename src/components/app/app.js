@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import './app.css';
-import SearchBar from '../searchBar/searchBar.js';
-import SearchResults from '../searchResults/searchResults.js';
-import Playlist from '../playlist/playlist.js';
+import { SearchBar } from '../searchBar/searchBar.js';
+import { SearchResults } from '../searchResults/searchResults.js';
+import { Playlist } from '../playlist/playlist.js';
 
 
-class App extends Component {
+export class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -64,7 +64,6 @@ class App extends Component {
   }
 
 
-
   render() {
     return (
       <div>
@@ -88,5 +87,3 @@ class App extends Component {
     );
   }
 }
-
-export default App;

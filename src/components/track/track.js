@@ -2,13 +2,14 @@ import React from 'react';
 import './track.css';
 
 
-class Track extends React.Component {
+export class Track extends React.Component {
   constructor(props) {
     super(props);
     this.addTrack = this.addTrack.bind(this);
     this.removeTrack = this.removeTrack.bind(this);
     this.renderAction = this.renderAction.bind(this);  // need it?
   }
+
 
   addTrack() {
     this.props.onAdd(this.props.track);
@@ -39,5 +40,3 @@ class Track extends React.Component {
     );
   }
 }
-
-export default Track;
